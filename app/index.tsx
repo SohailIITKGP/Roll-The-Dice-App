@@ -9,11 +9,6 @@ import DiceFour from '../assets/images/Four.png';
 import DiceFive from '../assets/images/Five.png';
 import DiceSix from '../assets/images/Six.png';
 
-const options = {
-  enableVibrateFallback: true,
-  ignoreAndroidSystemSettings: false,
-};
-
 const Dice = ({ imageUrl }) => (
   <View>
     <Image style={styles.diceImage} source={imageUrl} />
@@ -27,7 +22,6 @@ export default function DiceRollerApp() {
 
   const rollDiceOnTap = () => {
     const randomNumber = Math.floor(Math.random() * 6);
-    console.log("Random number is",randomNumber);
     setDiceImage(diceImages[randomNumber]);
     Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
   };
